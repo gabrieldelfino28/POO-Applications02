@@ -1,6 +1,6 @@
 package model;
 
-public final class FuncionarioTemp extends Funcionario{
+public final class FuncionarioTemp extends Funcionario {
     private int diaTemp;
     private int mesTemp;
     private int anoTemp;
@@ -22,7 +22,9 @@ public final class FuncionarioTemp extends Funcionario{
     }
 
     public void setMesTemp(int mesTemp) {
-        this.mesTemp = mesTemp;
+        if (mesTemp < 1) {
+            this.mesTemp = 1;
+        } else this.mesTemp = Math.min(mesTemp, 12);
     }
 
     public int getAnoTemp() {

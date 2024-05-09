@@ -1,16 +1,19 @@
 package view;
 
-import controller.ContratacaoController;
+import controller.ContrataIntegral;
+import controller.ContrataParcial;
+import controller.ContrataTemp;
+import controller.IContratacao;
 
 public class Main {
 
     public static void main(String[] args) {
+        IContratacao cIntegral = new ContrataIntegral();
+        IContratacao cParcial = new ContrataParcial();
+        IContratacao cTemp = new ContrataTemp();
 
-        ContratacaoController control = new ContratacaoController();
-
-        System.out.println(control.contratoIntegral());
-        System.out.println(control.contratoParcial());
-        System.out.println(control.contratoTemporario());
-
+        System.out.println(cIntegral.contratarFunc());
+        System.out.println(cParcial.contratarFunc());
+        System.out.println(cTemp.contratarFunc());
     }
 }
